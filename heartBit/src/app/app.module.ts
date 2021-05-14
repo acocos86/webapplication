@@ -7,13 +7,15 @@ import { ViewPacientDataComponent } from './view-pacient-data/view-pacient-data.
 import { LoginComponent } from './login/login.component';
 import { HttpClientModule } from '@angular/common/http';
 import { ViewPulseHistoryComponent } from './view-pulse-history/view-pulse-history.component';
+import { AddPacientComponent } from './add-pacient/add-pacient.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     ViewPacientDataComponent,
     LoginComponent,
-    ViewPulseHistoryComponent
+    ViewPulseHistoryComponent,
+    AddPacientComponent
   ],
   imports: [
     BrowserModule,
