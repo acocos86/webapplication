@@ -1,6 +1,39 @@
-LOGIN: <br>
-user:
-<input type="usr" #usr><br>
-passwd:
-<input type="usr" #pwd><br>
-<button name="btn" (click)="doLogin(usr,pwd)">Login</button>
+
+
+<head>
+  <title>Login Page</title>
+  <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <meta http-equiv="content-language" content="en-gb">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css">
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+ 
+ </head>
+ <body>
+  <div class="container">
+   <div class="logo"> 
+   </div>
+   <div>
+        <h3>Login</h3>
+      </div>
+   <form>
+      <div class="form-group">
+        <label><b>Username</b></label>
+        <input type="usr" #usr>
+       
+      </div>
+      <div class="form-group">
+        <label><b>Password</b></label>
+        <input type="usr" #pwd>
+      </div>
+      <div class="form-group">
+       <br>
+       <button name="btn" (click)="doLogin(usr,pwd)">Login</button>
+      </div>
+ 
+   </form>
+  </div>
+ 
+ </body>

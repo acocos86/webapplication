@@ -9,6 +9,7 @@ import { HttpClientModule } from '@angular/common/http';
 import { ViewPulseHistoryComponent } from './view-pulse-history/view-pulse-history.component';
 import { AddPacientComponent } from './add-pacient/add-pacient.component';
 import { EditPacientComponent } from './edit-pacient/edit-pacient.component';
+import { ViewEcgHistoryComponent } from './view-ecg-history/view-ecg-history.component';
 
 @NgModule({
   declarations: [
@@ -17,8 +18,8 @@ import { EditPacientComponent } from './edit-pacient/edit-pacient.component';
     LoginComponent,
     ViewPulseHistoryComponent,
     AddPacientComponent,
-    EditPacientComponent
-
+    EditPacientComponent,
+    ViewEcgHistoryComponent
   ],
   imports: [
     BrowserModule,
