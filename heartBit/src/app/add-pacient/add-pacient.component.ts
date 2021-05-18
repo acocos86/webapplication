@@ -13,5 +13,8 @@ export class AddPacientComponent implements OnInit {
 
   ngOnInit(): void {
   }
-
+    doSave(user,role,name,email,pass)
+    {
+    
+    }
 }

@@ -1,1 +1,32 @@
-<p>add-pacient works!</p>
+<body>
+  <div>
+      <h3><B>Add Pacient Data</B></h3>
+    </div>
+<table>
+<tbody>
+  <tr>
+      <td>UserId</td>
+      <td><input type="text" #user></td>
+    </tr>
+    <tr>
+      <td>RoleId</td>
+      <td><input type="text" #role/></td>
+    </tr>
+    <tr>
+      <td>Name</td>
+      <td><input type="text" #name/></td>
+    </tr>
+    <tr>
+      <td>Email</td>
+      <td><input type="text" #email/></td>
+    </tr>
+    <tr>
+      <td>Password</td>
+      <td><input type="text" #pass/></td>
+    </tr>
+</tbody>
+</table>
+<div>
+  <br>
+  <button name="btn" (click)=doSave(user,role,name,email,pass)>Save</button>
+ </div>

@@ -31,11 +31,11 @@ export class LoginComponent implements OnInit {
       this.role = result[0].RoleId;
       
       if (this.pass.match(pwd.value)) {
-        if (this.role == "1") {
-          this.globalStateService.gUsername = usr.value;
+        this.globalStateService.gUsername = usr.value;
+        if (this.role == "3") { 
           this.router.navigate(["viewPacientData"]);
-        } else if (this.role.match("2")) {
-          // navigate to view Doctor DaTA
+        } else if (this.role=="2") {
+          this.router.navigate(["viewDoctorData"]);
         } else {
           window.alert("Group ID is wrong!");
         }  
