@@ -1,0 +1,60 @@
+<body>
+    <div>
+        <h3><B>Add Doctor Data</B></h3>
+      </div>
+  <table>
+  <tbody>
+    <tr>
+        <td>Name</td>
+        <td><input type="text" #nam></td>
+      </tr>
+      <tr>
+        <td>Surname</td>
+        <td><input type="text" #surname/></td>
+      </tr>
+      <tr>
+        <td>Age</td>
+        <td><input type="text" #age/></td>
+      </tr>
+      <tr>
+        <td>PNC</td>
+        <td><input type="text" #pnc/></td>
+      </tr>
+      <tr>
+        <td>AdressStreet</td>
+        <td><input type="text" #adressStreet/></td>
+      </tr>
+      <tr>
+        <td>AdressLocation</td>
+        <td><input type="text" #adressLocation/></td>
+      </tr>
+      <tr>
+        <td>AdressCountry</td>
+        <td><input type="text" #adressCountry/></td>
+      </tr>
+      <tr>
+        <td>AdressPostalCode</td>
+        <td><input type="text" #adressPostalCode/></td>
+      </tr>
+      <tr>
+        <td>Phone</td>
+        <td><input type="text" #phone/></td>
+      </tr>
+      <tr>
+        <td>Email</td>
+        <td><input type="text" #email/></td>
+      </tr>
+      <tr>
+        <td>Profession</td>
+        <td><input type="text" #profession/></td>
+      </tr>
+      <tr>
+        <td>Job</td>
+        <td><input type="text" #job/></td>
+      </tr>
+</tbody>
+</table>
+<div>
+    <br>
+    <button name="btn" (click)=Save(nam,surname,age,pnc,adressStreet,adressLocation,adressCountry,adressPostalCode,phone,email,profession,job)>Save</button>
+   </div>
