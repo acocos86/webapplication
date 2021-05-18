@@ -10,6 +10,7 @@ import { ViewPulseHistoryComponent } from './view-pulse-history/view-pulse-histo
 import { AddPacientComponent } from './add-pacient/add-pacient.component';
 import { EditPacientComponent } from './edit-pacient/edit-pacient.component';
 import { ViewEcgHistoryComponent } from './view-ecg-history/view-ecg-history.component';
+import GlobalStateService from './global-state.service';
 
 @NgModule({
   declarations: [
@@ -26,7 +27,7 @@ import { ViewEcgHistoryComponent } from './view-ecg-history/view-ecg-history.com
     AppRoutingModule,
     HttpClientModule
   ],
-  providers: [],
+  providers: [GlobalStateService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
