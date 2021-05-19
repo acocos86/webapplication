@@ -5,28 +5,34 @@
 <table>
 <tbody>
   <tr>
-      <td>UserId</td>
-      <td><input type="text" #user></td>
+      <td>Username</td>
+      <td><input type="text" #Username></td>
     </tr>
-    <tr>
-      <td>RoleId</td>
-      <td><input type="text" #role/></td>
-    </tr>
+
     <tr>
       <td>Name</td>
-      <td><input type="text" #name/></td>
+      <td><input type="text" #Name/></td>
+    </tr>
+    <tr>
+      <td>Surname</td>
+      <td><input type="text" #Surname/></td>
+    </tr>
+    <tr>
+      <td>Phone</td>
+      <td><input type="number" #Phone/></td>
     </tr>
     <tr>
       <td>Email</td>
-      <td><input type="text" #email/></td>
+      <td><input type="text" #Email/></td>
     </tr>
     <tr>
-      <td>Password</td>
-      <td><input type="text" #pass/></td>
+      <td>CNP</td>
+      <td><input type="text" #CNP/></td>
     </tr>
+
 </tbody>
 </table>
 <div>
   <br>
-  <button name="btn" (click)=doSave(user,role,name,email,pass)>Save</button>
+  <button name="btn" (click)=addPacient(Name,Email,Username,Surname,CNP,Phone)>Save</button>
  </div>

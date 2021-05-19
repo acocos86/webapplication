@@ -11,6 +11,7 @@ import { AddPacientComponent } from './add-pacient/add-pacient.component';
 import { EditPacientComponent } from './edit-pacient/edit-pacient.component';
 import { ViewEcgHistoryComponent } from './view-ecg-history/view-ecg-history.component';
 import GlobalStateService from './global-state.service';
+import { ViewDoctorDataComponent } from './view-doctor-data/view-doctor-data.component';
 
 @NgModule({
   declarations: [
@@ -20,7 +21,8 @@ import GlobalStateService from './global-state.service';
     ViewPulseHistoryComponent,
     AddPacientComponent,
     EditPacientComponent,
-    ViewEcgHistoryComponent
+    ViewEcgHistoryComponent,
+    ViewDoctorDataComponent
   ],
   imports: [
     BrowserModule,

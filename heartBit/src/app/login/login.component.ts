@@ -32,6 +32,7 @@ export class LoginComponent implements OnInit {
       
       if (this.pass.match(pwd.value)) {
         this.globalStateService.gUsername = usr.value;
+        this.globalStateService.gUserId = usr.value;
         if (this.role == "3") { 
           this.router.navigate(["viewPacientData"]);
         } else if (this.role=="2") {

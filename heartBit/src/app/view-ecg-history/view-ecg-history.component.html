@@ -5,27 +5,23 @@
 
 
   <body>
-    <table style="width:100%">
-      <tr>
-        <th>Data</th>
-        <th>Hour</th> 
-        <th>Value</th>
-      </tr>
-      <tr>
-        <td><input type="text" [value]="data"/></td>
-        <td><input type="text" [value]="hour"/></td>
-        <td><input type="text" [value]="value"/></td>
-      </tr>
-      <tr>
-        <td><input type="text" [value]="data"/></td>
-        <td><input type="text" [value]="hour"/></td>
-        <td><input type="text" [value]="value"/></td>
-      </tr>
-      <tr>
-        <td><input type="text" [value]="data"/></td>
-        <td><input type="text" [value]="hour"/></td>
-        <td><input type="text" [value]="value"/></td>
-      </tr>
-    </table>
+    <button name="btn" (click)=Refresh()>Refresh List</button>  
+    <div style="text-align:left;width:500px;">
     
-    </body>
+      <table *ngIf="arrEcg">
+          <!-- ADD HEADERS -->
+          <tr>
+              <th>Date</th>
+                      <th>Value</th>
+ 
+          </tr>
+  
+          <!-- BIND ARRAY TO TABLE -->
+          <tr *ngFor="let ecg of arrEcg">
+              <td>{{ecg.Date}}</td>
+                      <td>{{ecg.Level}}</td>
+          </tr>
+      </table>
+  </div>
+    
+</body>

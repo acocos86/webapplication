@@ -5,69 +5,43 @@
   <table>
   <tbody>
     <tr>
-        <td>Name</td>
-        <td><input type="text" [value]="name"/></td>
-      </tr>
-      <tr>
-        <td>Surname</td>
-        <td><input type="text" [value]="surname"/></td>
-      </tr>
-      <tr>
-        <td>Age</td>
-        <td><input type="text" [value]="age"/></td>
-      </tr>
-      <tr>
-        <td>PNC</td>
-        <td><input type="text" [value]="pnc"/></td>
-      </tr>
-      <tr>
-        <td>AdressStreet</td>
-        <td><input type="text" [value]="adressStreet"/></td>
-      </tr>
-      <tr>
-        <td>AdressLocation</td>
-        <td><input type="text" [value]="adressLocation"/></td>
-      </tr>
-      <tr>
-        <td>AdressCountry</td>
-        <td><input type="text" [value]="adressCountry"/></td>
-      </tr>
-      <tr>
-        <td>AdressPostalCode</td>
-        <td><input type="text" [value]="adressPostalCode"/></td>
-      </tr>
-      <tr>
-        <td>Phone</td>
-        <td><input type="text" [value]="phone"/></td>
-      </tr>
-      <tr>
-        <td>Email</td>
-        <td><input type="text" [value]="email"/></td>
-      </tr>
-      <tr>
-        <td>Profession</td>
-        <td><input type="text" [value]="profession"/></td>
-      </tr>
-      <tr>
-        <td>Job</td>
-        <td><input type="text" [value]="job"/></td>
+        <td>Name:</td>
+        {{name}}
       </tr>
 </tbody>
 </table>
 
 
 <h1><b><p align="left"> List Pacients</p></b></h1>
+<button name="btn" (click)=Refresh()>Refresh List</button>
+<table *ngIf="arrPat">
+  <!-- ADD HEADERS -->
+  <tr>
+      <th>Username</th>
+              <th>Name</th>
+                  <th>Surname</th>
+                          <th>Email</th>
+  </tr>
+
+  <!-- BIND ARRAY TO TABLE -->
+  <tr *ngFor="let user of arrPat">
+      <td>{{user.UserId}}</td>
+              <td>{{user.Name}}</td>
+                  <td>{{user.Surname}}</td>
+                      <td>{{user.Email}}</td>
+  </tr>
+</table>
+
     <table class="table10">
 	    <tr>
 		    <td>
-	  	        <select size="1" name="channel" class="dropdown1">
-                <option value="">SELECT</option>
-		              <option type="text" [value]="name" type="text" [value]="surname"></option>
-                  <option type="text" [value]="name" type="text" [value]="surname"></option>
-                  <option type="text" [value]="name" type="text" [value]="surname"></option>
-                  <option type="text" [value]="name" type="text" [value]="surname"></option>
-                  <option type="text" [value]="name" type="text" [value]="surname"></option>
-	  	        </select>
+          <select class="select-option" #mySelect (change)="onSelectCocosChange(mySelect.value)">
+            <option value="">--Select Pacient--
+            <option *ngFor="let item of arrPat" [value]="item.UserId" >
+              {{item.UserId}}
+            </option>    
+        </select>
+
 	    	</td>
 		<td>
       <!-- <input type="submit" value="SUBMIT"/> -->

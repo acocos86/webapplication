@@ -1,1 +1,34 @@
-<p>edit-pacient works!</p>
+<body>
+    <div>
+        <h3><B>Edit Pacient</B></h3>
+      </div>
+  <table>
+  <tbody>
+  
+      <tr>
+        <td>Name</td>
+        <td><input type="text" [value]="name" #Name/></td>
+      </tr>
+      <tr>
+        <td>Surname</td>
+        <td><input type="text" [value]="surname" #Surname/></td>
+      </tr>
+      <tr>
+        <td>Phone</td>
+        <td><input type="number" [value]="phone" #Phone/></td>
+      </tr>
+      <tr>
+        <td>Email</td>
+        <td><input type="text" [value]="email" #Email/></td>
+      </tr>
+      <tr>
+        <td>CNP</td>
+        <td><input type="text" [value]="cnp" #Cnp/></td>
+      </tr>
+  
+  </tbody>
+  </table>
+  <div>
+    <br>
+    <button name="btn" (click)=editPacient(Name,Surname,Phone,Email,Cnp)>Save</button>
+   </div>
