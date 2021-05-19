@@ -58,7 +58,7 @@ export class ViewPacientDataComponent implements OnInit {
 
 
       //this.job=result.job;
-    })
-  }
+  })
 
+  }
 }
