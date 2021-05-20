@@ -25,7 +25,7 @@ export class LoginComponent implements OnInit {
   doLogin(usr,pwd) {
 
 
-    this.httpClient.get("https://heartbitfis.azurewebsites.net/user/"+usr.value).subscribe((result:any) => {
+    this.httpClient.get("http://heartbitfis.azurewebsites.net/user/"+usr.value).subscribe((result:any) => {
       console.log(result[0]);
       this.pass =  result[0].Password;
       this.role = result[0].RoleId;

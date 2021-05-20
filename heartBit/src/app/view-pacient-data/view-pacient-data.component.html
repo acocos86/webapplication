@@ -1,5 +1,5 @@
 
-<head>
+<!--<head>
   <title> View Pacient Data    </title>
   <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
@@ -23,7 +23,7 @@
 
       <div class="form-group">
         <label><b>Username</b></label>
-        <input type="text" [value]="username"/><br>
+        {{username}}
       </div>
       <div class="form-group">
         <label><b>Name</b></label>
@@ -46,9 +46,41 @@
         <label><b>Email</b></label>
         <input type="text" [value]="email"/><br>
       </div>
- </body>
-
-
+ </body>-->
+ <div>
+  <h1>View Pacient Data</h1>
+  <nav>
+    <ul>
+      <li><a routerLink="/viewPulseHist" routerLinkActive="active">View Pulse History</a></li>
+      <li><a routerLink="/viewEcgHist" routerLinkActive="active">View Ecg History</a></li>
+    </ul>
+  </nav>
+</div>
+<div>
+  <tr>
+    <label><b>Username:</b></label>
+  {{username}}
+</div>
+<div >
+  <label><b>Name:</b></label>
+  {{name}}
+</div>
+<div >
+  <label><b>Surname:</b></label>
+  {{surname}}
+</div>
+<div >
+  <label><b>CNP:</b></label>
+  {{pnc}}
+</div>
+<div >
+  <label><b>Phone:</b></label>
+  {{phone}}
+</div>
+<div >
+  <label><b>Email:</b></label>
+  {{email}}
+</div>
   <router-outlet></router-outlet>
 
 
