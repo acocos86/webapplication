@@ -26,8 +26,8 @@ export class AddPacientComponent implements OnInit {
   })
   }
 
-  addPacient(Name,Email,Username,Surname,CNP,Phone) { 
-    const bodyUser = [{"RoleId":3,"Name":Username.value,"Email":Email.value,"Password":"test"}];
+  addPacient(Name,Email,Surname,CNP,Phone) { 
+    const bodyUser = [{"RoleId":3,"Name":Name.value,"Email":Email.value,"Password":"test"}];
     console.log("Userbody");
     console.log(bodyUser);
     this.httpClient.put("http://heartbitfis.azurewebsites.net/user", bodyUser, this.httpHeader).subscribe(data => {
