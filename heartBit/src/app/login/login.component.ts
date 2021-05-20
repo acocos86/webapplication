@@ -37,6 +37,8 @@ export class LoginComponent implements OnInit {
           this.router.navigate(["viewPacientData"]);
         } else if (this.role=="2") {
           this.router.navigate(["viewDoctorData"]);
+        } else if (this.role=="1"){
+          this.router.navigate(["viewAdminData"]);
         } else {
           window.alert("Group ID is wrong!");
         }  

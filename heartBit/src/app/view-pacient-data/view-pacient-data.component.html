@@ -82,6 +82,21 @@
   {{email}}
 </div>
   <router-outlet></router-outlet>
-
+  <h1><b><p align="left"> Recomandari:</p></b></h1>
+  <button name="btn" (click)=Refresh()>Refresh List</button>
+  <table *ngIf="arrRec">
+    <!-- ADD HEADERS -->
+    <tr>
+        <th>Date</th>
+                <th>Recom</th>
+  
+    </tr>
+  
+    <!-- BIND ARRAY TO TABLE -->
+    <tr *ngFor="let user of arrRec">
+        <td>{{user.Date | date}}</td>
+                <td>{{user.Recom}}</td>
+    </tr>
+  </table>
 
  

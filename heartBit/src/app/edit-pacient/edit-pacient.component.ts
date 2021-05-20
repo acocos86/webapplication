@@ -40,11 +40,13 @@ export class EditPacientComponent implements OnInit {
   }
 
   editPacient(Name,Surname,Phone,Email,Cnp){
-    const bodyPacient = {"UserId":this.userId,"DoctorId":this.doctorId,"Name":Name.value,"Surname":Surname.value,"PNC":Cnp.value,"Email":Email.value,"Phone":Phone.value,"Age":0,"AddressStreet":"","AddressNumber":"","AddressLocation":"","AddressCounty":"","AddressPostalCode":"","Profession":"","Job":""};
+    const bodyPacient2 = [{"PatientId":15,"UserId":34,"DoctorId":1,"Name":"Adrian","Surname":"Cocosss","Age":0,"PNC":786096522554,"AddressStreet":"","AddressNumber":"","AddressLocation":"Timisoara","AddressCounty":"Timis","AddressPostalCode":"","Phone":"0734443725","Email":"a.cocos86@gmail.com","Profession":"Software Developer","Job":"IBMDATA"}];
+    const bodyPacient = [{"PatientId":this.patientId,"UserId":this.userId,"DoctorId":this.doctorId,"Name":Name.value,"Surname":Surname.value,"PNC":Cnp.value,"Email":Email.value,"Phone":Phone.value,"Age":0,"AddressStreet":"","AddressNumber":"","AddressLocation":"","AddressCounty":"","AddressPostalCode":"","Profession":"","Job":""}];
     console.log(bodyPacient);
     console.log(this.patientId);
     this.httpClient.patch("http://heartbitfis.azurewebsites.net/patient/"+this.patientId, bodyPacient, this.httpHeader).subscribe(data => {
     console.log(data);
+    this.router.navigate(["viewDoctorData"]);
   })      
   }
 

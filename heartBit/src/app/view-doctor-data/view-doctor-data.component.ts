@@ -28,17 +28,13 @@ export class ViewDoctorDataComponent implements OnInit{
   selectedData='';
   doctorId='';
   userId='';
-  
-
-
-  constructor(private httpClient: HttpClient, private router: Router,private globalStateService : GlobalStateService) {
+  pacientId='';
+    constructor(private httpClient: HttpClient, private router: Router,private globalStateService : GlobalStateService) {
     
    }
-
   ngOnInit(): void {
     this.httpClient.get("http://heartbitfis.azurewebsites.net/doctor/"+this.globalStateService.gUsername).subscribe((result:any) => {
 
-      
       this.name=result[0].Name;
       this.userId=result[0].UserId;
 
@@ -48,8 +44,7 @@ export class ViewDoctorDataComponent implements OnInit{
       })
 
     })
-    
-    
+        
   }
   Edit() {
     this.globalStateService.gPacientId=this.selectedUser;
@@ -60,11 +55,16 @@ export class ViewDoctorDataComponent implements OnInit{
   }
   Delete() {
     this.httpClient.get("http://heartbitfis.azurewebsites.net/patient/"+this.selectedUser).subscribe((result:any) => {
-      this.httpClient.delete("http://heartbitfis.azurewebsites.net/patient/"+result[0].PatientId).subscribe((result:any) => {
-        this.httpClient.delete("http://heartbitfis.azurewebsites.net/user/"+this.selectedUser).subscribe((result:any) => {
-          this.ngOnInit();
-        })  
+    this.pacientId=result[0].PatientId;
+    this.httpClient.delete("http://heartbitfis.azurewebsites.net/rec/"+this.pacientId).subscribe((result:any) => {
+      this.httpClient.delete("http://heartbitfis.azurewebsites.net/alert/"+this.pacientId).subscribe((result:any) => {
+        this.httpClient.delete("http://heartbitfis.azurewebsites.net/patient/"+this.pacientId).subscribe((result:any) => {
+          this.httpClient.delete("http://heartbitfis.azurewebsites.net/user/"+this.selectedUser).subscribe((result:any) => {
+            this.ngOnInit();
+          })  
+        })
       })
+    })
       
     })
   }
@@ -72,8 +72,20 @@ export class ViewDoctorDataComponent implements OnInit{
   {
    this.router.navigate(["addPacient"]);
   }
+  ekgData() {
+    this.router.navigate(["viewEcgHist"]);
+  }
+  pulseData() {
+    this.router.navigate(["viewPulseHist"]);
+  }
   onSelectCocosChange(value:string) {
     this.selectedUser=value;
+    this.httpClient.get("http://heartbitfis.azurewebsites.net/patient/"+this.selectedUser).subscribe((result:any) => {
+      this.globalStateService.gPacientId=result[0].PatientId;
+    })
     console.log("the selected value is " + value);
+  }
+  addRec() {
+    this.router.navigate(["addRec"]);
   }
 }

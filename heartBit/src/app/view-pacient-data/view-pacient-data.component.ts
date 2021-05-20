@@ -23,7 +23,7 @@ export class ViewPacientDataComponent implements OnInit {
   profession='';
   job='';
   username='';
-
+  arrRec: string [];
   
 
   constructor(private httpClient: HttpClient, private router: Router, private globalStateService : GlobalStateService) { }
@@ -32,7 +32,7 @@ export class ViewPacientDataComponent implements OnInit {
     this.httpClient.get("http://heartbitfis.azurewebsites.net/user/"+this.globalStateService.gUsername).subscribe((result:any) => {
 
  
-      this.username=result[0].Name;
+      this.username=result[0].UserId;
       this.email=result[0].Email;
     	this.httpClient.get("http://heartbitfis.azurewebsites.net/patient/"+this.globalStateService.gUsername).subscribe((result:any) => {
         this.name=result[0].Name;
@@ -40,37 +40,18 @@ export class ViewPacientDataComponent implements OnInit {
         this.pnc=result[0].PNC;
         this.phone=result[0].Phone;
         this.globalStateService.gPacientId=result[0].PatientId;
+
+        this.httpClient.get("http://heartbitfis.azurewebsites.net/rec/"+this.globalStateService.gPacientId).subscribe((result:any) => {
+          this.arrRec = result;
+          this.arrRec.reverse();
+        })
       })
 
-      //this.surname=result.surname;
-      //this.age=result.age;
+    })
 
-      //this.pnc=result.pnc;
-
-  
-      //this.adressStreet=result.adressStreet;
-
-      //this.adressLocation=result.adressLocation;
-
-
-      //this.adressCountry=result.adressCountry;
-
-
-      //this.adressPostalCode=result.adressPostalCode;
-
-
-      //this.phone=result.phone;
-
- 
-      
-
-
-      //this.profession=result.profession;
-
-
-      //this.job=result.job;
-  })
-
+  }
+  Refresh() {
+    this.ngOnInit();
   }
 
   

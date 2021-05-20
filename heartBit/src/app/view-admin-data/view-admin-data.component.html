@@ -1,0 +1,21 @@
+<div>
+        <h1><B>Admin Dashboard</B></h1>
+      </div>
+      <button name="btn" (click)=AddDoctor()>Add Doctor</button>
+
+ <h1><b><p align="left"> List Doctors</p></b></h1>
+<button name="btn" (click)=Refresh()>Refresh List</button>
+<table *ngIf="arrDoc">
+  <!-- ADD HEADERS -->
+  <tr>
+      <th>Username</th>
+              <th>Name</th>
+
+  </tr>
+
+  <!-- BIND ARRAY TO TABLE -->
+  <tr *ngFor="let user of arrDoc">
+      <td>{{user.UserId}}</td>
+              <td>{{user.Name}}</td>
+  </tr>
+</table>
