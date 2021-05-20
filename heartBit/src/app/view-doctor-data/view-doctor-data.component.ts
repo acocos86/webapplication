@@ -27,6 +27,7 @@ export class ViewDoctorDataComponent implements OnInit{
   arrPat: string [];
   selectedData='';
   doctorId='';
+  userId='';
   
 
 
@@ -39,6 +40,8 @@ export class ViewDoctorDataComponent implements OnInit{
 
       
       this.name=result[0].Name;
+      this.userId=result[0].UserId;
+
       this.globalStateService.gDoctorId=result[0].DoctorId;
       this.httpClient.get("http://heartbitfis.azurewebsites.net/patientByDoctor/"+this.globalStateService.gDoctorId).subscribe((result:any) => {
         this.arrPat = result;
